@@ -158,11 +158,13 @@ const register = async () => {
     console.log("An error occurred : ", result.error);
     let msg = result.error;
     console.log(msg);
-    updateElement("loginError", msg);
+    updateElement("registerError", msg);
     return;
   }
 
   console.log("Account created!", result);
+  updateState("ACCOUNT", result);
+  navigate("/");
 };
 
 const addTransaction = async () => {
