@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Banking App</title>
+  </head>
+  <body>
+    <!--This is where the different templates will be loaded-->
+    <div id="app">Loading...</div>
+
+    <!-- Below template is for the login page -->
+    <template id="login">
+      <div class="login_page">
+        <h1>Optym Banking</h1>
+        <!-- <a href="/dashboard" onclick="onLinkClick(event)">Login</a> -->
+        <div class="login_box">
+          <section id="login_section" class="login_section">
+            <h2>Login</h2>
+            <form id="loginForm" action="javascript:login()">
+              <label for="username">Username</label>
+              <input id="username" name="user" type="text" required />
+              <div id="loginError"></div>
+              <button>Login</button>
+            </form>
+          </section>
+          <hr />
+          <section id="register_section" class="login_section">
+            <h2>Register</h2>
+            <form id="registrationForm" action="javascript:register()">
+              <label for="username">Username</label>
+              <input id="username" name="user" type="text" required />
+              <label for="currency">Currency</label>
+              <input
+                id="currency"
+                name="currency"
+                type="text"
+                value="$"
+                required
+              />
+              <label for="description">Description</label>
+              <input id="description" name="description" type="text" required />
+              <label for="balance">Current Balance</label>
+              <input
+                id="balance"
+                name="balance"
+                type="number"
+                value="0"
+                required
+              />
+              <div id="registerError"></div>
+              <button>Register</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </template>
+
+    <!-- Below template is for the Dashboard page -->
+    <template id="dashboard">
+      <div id="dashboard_container">
+        <header class="dashboard_header">
+          <h1>Optym Banking</h1>
+          <a href="/login" onclick="onLinkClick(event)">Logout</a>
+        </header>
+        <div class="dashboard_content">
+          <div>
+            <h2 id="user_salutation"></h2>
+          </div>
+          <div id="dashboard_balance">
+            <div>Balance</div>
+            <div><span id="balance"></span> <span id="currency"></span></div>
+          </div>
+          <h3 id="description"></h3>
+          <section>
+            <div class="transactions_header">
+              <h2>Transactions</h2>
+              <button onclick="openTransactionModal()">Add Transaction</button>
+            </div>
+
+            <table id="transaction_table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Object</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="transactions"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </template>
+    <template id="transaction_row">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <div id="transaction_modal_container">
+      <div id="transaction_modal">
+        <h2>Add Transaction</h2>
+        <form id="transactionForm" action="javascript:addTransaction()">
+          <label for="transaction_date">Date</label>
+          <input id="transaction_date" name="date" type="date" required />
+          <label for="object">Object</label>
+          <input id="object" name="object" type="text" required />
+          <label for="amount">Amount</label>
+          <input id="amount" name="amount" type="number" required />
+          <div id="registerError"></div>
+          <div class="button_section">
+            <button type="reset" onclick="closeTransactionModal()">
+              Cancel
+            </button>
+            <button>Ok</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

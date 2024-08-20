@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login_page {
+  background-color: #41b3a2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.login_page > h1 {
+  color: white;
+}
+
+.login_box {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login_section,
+.login_section > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 10px; */
+  width: 100%;
+}
+
+.login_section > h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 20px;
+  color: #0d7c66;
+  text-transform: uppercase;
+}
+
+.login_section > form > * {
+  width: 100%;
+}
+
+.login_section > form > label {
+  margin: 5px 0px 1px;
+  color: rgb(111, 111, 111);
+}
+
+.login_section > form > input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(111, 111, 111);
+  outline: none;
+}
+
+.login_section > form > button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin: 5px 0px 1px;
+  border: none;
+  background-color: #0d7c66;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#loginError,
+#registerError {
+  font-size: 14px;
+  color: red;
+  margin: 5px;
+}
+
+/* =================Dashboard =============================== */
+
+#dashboard_container {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #41b3a2;
+  padding: 5px 10px;
+  color: white;
+}
+
+.dashboard_header > a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: #0d7c66;
+  border-radius: 10px;
+}
+
+.dashboard_content {
+  padding: 20px;
+}
+
+#dashboard_balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dashboard_balance > :nth-child(2) {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.transactions_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.transactions_header > button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #0d7c66;
+  color: white;
+  cursor: pointer;
+}
+
+#transaction_table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#transaction_table > thead {
+  background-color: #41b3a2;
+}
+
+#transaction_table td,
+th {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+#transaction_table tr:nth-child(even) {
+  background-color: #ddd;
+}
+#transaction_modal_container {
+  position: fixed;
+  top: 0;
+  background-color: rgba(62, 62, 62, 0.625);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#transaction_modal {
+  width: 300px;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#transaction_modal > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+#transaction_modal > form > * {
+  width: 100%;
+}
+
+#transaction_modal > form > label {
+  margin: 10px 0px 5px;
+  color: rgb(111, 111, 111);
+}
+
+#transaction_modal > form > input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(111, 111, 111);
+  outline: none;
+}
+
+.button_section {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button_section > button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #0d7c66;
+  cursor: pointer;
+}
+
+.button_section > button:first-child {
+  color: #0d7c66;
+  background-color: #ddd;
+}
