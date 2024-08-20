@@ -171,6 +171,13 @@ th {
 #transaction_table tr:nth-child(even) {
   background-color: #ddd;
 }
+
+.transaction_bin_icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
 #transaction_modal_container {
   position: fixed;
   top: 0;

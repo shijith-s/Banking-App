@@ -9,6 +9,9 @@ const getTransactionRow = (transaction) => {
   row.children[0].children[0].textContent = transaction.date;
   row.children[0].children[1].textContent = transaction.object;
   row.children[0].children[2].textContent = transaction.amount.toFixed(2);
+  row.children[0].children[3].addEventListener("click", () => {
+    deleteTransaction(transaction.id);
+  });
   return row;
 };
 
@@ -160,7 +163,21 @@ const addTransaction = async () => {
     return;
   }
 
-  console.log("Transaction Added !", result);
+  await getAccountDetails(ACCOUNT.user);
+  closeTransactionModal();
+  transactionForm.reset();
+};
+const deleteTransaction = async (id) => {
+  if (!ACCOUNT.user) {
+    return console.log("No user logged in!");
+  }
+  const result = await deleteTransactionAPI(ACCOUNT.user, id);
+
+  if (result && result.error) {
+    console.log("An error occurred : ", result.error);
+    return;
+  }
+
   await getAccountDetails(ACCOUNT.user);
   closeTransactionModal();
   transactionForm.reset();
@@ -212,6 +229,21 @@ const createTransaction = async (user, data) => {
       }
     );
     return await response.json();
+  } catch (error) {
+    return { error: error.message || "Unknown error" };
+  }
+};
+const deleteTransactionAPI = async (user, id) => {
+  try {
+    const response = await fetch(
+      `//localhost:5000/api/accounts/${encodeURIComponent(
+        user
+      )}/transactions/${encodeURIComponent(id)}`,
+      {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+      }
+    );
   } catch (error) {
     return { error: error.message || "Unknown error" };
   }
