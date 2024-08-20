@@ -112,12 +112,15 @@ body {
   color: white;
 }
 
-.dashboard_header > a {
+.dashboard_header > button {
   text-decoration: none;
   color: white;
   padding: 10px 20px;
   background-color: #0d7c66;
   border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .dashboard_content {

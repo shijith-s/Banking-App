@@ -63,7 +63,7 @@
       <div id="dashboard_container">
         <header class="dashboard_header">
           <h1>Optym Banking</h1>
-          <a href="/login" onclick="onLinkClick(event)">Logout</a>
+          <button onclick="logout()">Logout</button>
         </header>
         <div class="dashboard_content">
           <div>
@@ -100,7 +100,9 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><img src="/bin.png" alt="delete" class="transaction_bin_icon" /></td>
+        <td>
+          <img src="/bin.png" alt="delete" class="transaction_bin_icon" />
+        </td>
       </tr>
     </template>
     <div id="transaction_modal_container">
